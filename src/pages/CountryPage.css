@@ -1,0 +1,46 @@
+.country-page {
+  margin-top: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 10rem auto;
+}
+.country-page * {
+  font-size: 1.2rem;
+}
+
+.country-page h1,
+h3 {
+  font-weight: unset;
+}
+
+.country-image {
+  width: 200px;
+}
+.country-image > img {
+  width: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  aspect-ratio: 6/4;
+}
+
+.country-infos {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.languages {
+  display: flex;
+  flex-direction: column;
+}
+.languages > p {
+  margin: 0;
+  gap: 6px;
+}
+.languages > ul > li {
+  padding: 2px;
+  border-radius: 8px;
+  color: white;
+  background-color: black;
+}
