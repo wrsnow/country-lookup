@@ -4,7 +4,7 @@ import App from "../App";
 import Error from "./Error";
 import { useQuery } from "react-query";
 import CountryPage from "./CountryPage";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { HashRouter, Navigate, Route, Routes } from "react-router-dom";
 
 function PageRoutes() {
   const { data, isLoading, error } = useQuery("countriesData", async () => {
@@ -24,14 +24,14 @@ function PageRoutes() {
   });
 
   return (
-    <Router>
+    <HashRouter>
       <Routes>
         <Route exact path="/" element={<App />} />
         {renderRoutes}
-        <Route path="/*" element={<Error />} />
+        <Route path="*" element={<Navigate to="/" />} />
         <Route path="/countrypage" element={<CountryPage />} />
       </Routes>
-    </Router>
+    </HashRouter>
   );
 }
 
