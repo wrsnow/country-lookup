@@ -44,3 +44,20 @@ h3 {
   color: white;
   background-color: black;
 }
+
+@media (max-width: 500px) {
+  .country-page {
+    margin-top: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .country-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+}
