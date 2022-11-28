@@ -87,7 +87,7 @@ body {
     font-size: 0.8rem;
   }
   .country-card {
-    aspect-ratio: 3/4;
+    aspect-ratio: 3/5;
     color: black;
     display: flex;
     flex-direction: column;
