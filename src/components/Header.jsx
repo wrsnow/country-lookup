@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import FilterCountries from "./FilterCountries";
 import HeaderBar from "../components/Custom Elements/HeaderBar";
 
-function Header({ setCondition, isDarkMode, setIsDarkMode, setSearch }) {
+function Header({ setCondition, isDarkMode, setIsDarkMode, headerRef }) {
   function changeTheme() {
     setIsDarkMode((prev) => !prev);
   }
 
   return (
-    <HeaderBar darkMode={isDarkMode}>
+    <HeaderBar darkMode={isDarkMode} ref={headerRef}>
       <button onClick={changeTheme}>
         <span>
           <i

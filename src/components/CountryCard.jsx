@@ -1,35 +1,8 @@
-import { useCallback, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 function CountryCard({ name, img, population, region, capital }) {
-  const [isVisible, setIsVisible] = useState(true);
-
-  const observer = useRef();
-  const currentEl = useCallback((node) => {
-    if (observer.current) observer.current.disconnect();
-
-    observer.current = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) {
-          setIsVisible(true);
-        } else {
-          setIsVisible(false);
-        }
-      },
-      {
-        threshold: 0.2,
-        rootMargin: "500px",
-      }
-    );
-    if (node) observer.current.observe(node);
-  });
-
-  const cardStyle = {
-    visibility: isVisible ? "visible" : "hidden",
-  };
-
   return (
-    <div style={cardStyle} className="country-card" ref={currentEl}>
+    <div className="country-card">
       <Link to={`/${name}`}>
         <img src={img} alt={name} />
       </Link>
