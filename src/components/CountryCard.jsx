@@ -11,12 +11,9 @@ function CountryCard({ name, img, population, region, capital }) {
     observer.current = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
-          console.log("is visible");
           setIsVisible(true);
         } else {
           setIsVisible(false);
-
-          console.log("is not visible");
         }
       },
       {

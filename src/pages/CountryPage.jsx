@@ -5,21 +5,10 @@ import HeaderBar from "../components/Custom Elements/HeaderBar";
 
 function CountryPage({ data }) {
   const isDarkMode = JSON.parse(localStorage.getItem("DarkMode"));
-  console.log(isDarkMode);
-  console.clear();
-  console.log(data);
 
   const nativeName = Object.values(data?.name?.nativeName ?? "4");
   const Languages = Object.values(data?.languages || "Not found");
   const Currency = Object.values(data?.currencies || "Not found");
-
-  console.log({
-    nativeName,
-    Languages,
-    Currency,
-  });
-
-  console.log(nativeName[0].common);
 
   return (
     <div className="country-page">
