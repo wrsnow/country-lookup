@@ -13,8 +13,6 @@ function Pagination({ setCurrentPage, scrollToTop }) {
     scrollToTop();
   }
 
-  console.log(numberOfPages);
-
   return (
     <S_Div>
       <ul>
