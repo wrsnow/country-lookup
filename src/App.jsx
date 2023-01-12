@@ -12,13 +12,21 @@ function App() {
     }
     return false;
   });
-  const regex = /[A-Z]/g;
   const [condition, setCondition] = useState("");
   const { data, isLoading, error } = useQuery("countriesData", async () => {
     const res = await axios.get("https://restcountries.com/v3.1/all");
 
     return res.data;
   });
+
+  const regionsList = [
+    "Americas",
+    "Asia",
+    "Europe",
+    "Oceania",
+    "Africa",
+    "Antarctic",
+  ];
 
   useEffect(() => {
     if (isDarkMode) {
@@ -47,7 +55,7 @@ function App() {
   const FilterArr =
     condition.length > 0
       ? data.filter((el) => {
-          if (regex.test(condition[0])) {
+          if (regionsList.some((el) => el === condition)) {
             return el.region === condition;
           } else {
             return el.name.common.toLowerCase().includes(condition);
