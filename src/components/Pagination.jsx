@@ -20,7 +20,11 @@ function Pagination({ setCurrentPage, scrollToTop }) {
           return (
             <li onClick={() => changePage(page)} key={page}>
               {page}
-              <input type="radio" name="page" />
+              <input
+                type="radio"
+                name="page"
+                aria-label={`page number ${page}`}
+              />
             </li>
           );
         })}
